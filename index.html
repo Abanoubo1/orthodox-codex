@@ -17,7 +17,6 @@
     </script>
     <script src="https://unpkg.com/lucide@0.460.0"></script>
     <style>
-        /* الخلفية: وهج ذهبي خافت خلف العنوان فقط، كأنه هالة أيقونة */
         .halo { background: radial-gradient(60% 60% at 50% 0%, rgba(200,162,74,.18), transparent 70%); }
         :focus-visible { outline: 2px solid #C8A24A; outline-offset: 3px; }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -34,13 +33,27 @@
 
     <main class="max-w-5xl mx-auto px-4 pb-20">
         <h2 class="text-2xl font-extrabold mb-6">متاح الآن</h2>
-        <section class="mb-14">
+        
+        <section class="space-y-6 mb-14">
+            <!-- كارت 1: القديس متى -->
             <a href="topics/gospel-of-matthew/" class="group block rounded-2xl border border-gold/40 bg-lapis p-6 sm:p-8 transition hover:border-gold hover:-translate-y-1">
                 <div class="flex items-start gap-4">
                     <i data-lucide="book-open" class="h-8 w-8 shrink-0 text-gold" aria-hidden="true"></i>
                     <div>
-                        <h3 class="text-xl sm:text-2xl font-extrabold">القديس متى العشّار وإنجيله</h3>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-white">القديس متى العشّار وإنجيله</h3>
                         <p class="mt-2 leading-loose text-vellum/80">سيرته، لقب العشّار، أسلوب التدوين، المعجزات والأمثال والانفرادات، وملخص الأصحاحات الـ 28، مع نطق اسمه بست لغات.</p>
+                        <span class="mt-4 inline-flex items-center gap-2 text-gold font-semibold">افتح الصفحة <i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- كارت 2: البنتارخيا -->
+            <a href="topics/the-pentarchy/" class="group block rounded-2xl border border-gold/40 bg-lapis p-6 sm:p-8 transition hover:border-gold hover:-translate-y-1">
+                <div class="flex items-start gap-4">
+                    <i data-lucide="landmark" class="h-8 w-8 shrink-0 text-gold" aria-hidden="true"></i>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-white">البنتارخيا: الخماسية الرسولية العظمى</h3>
+                        <p class="mt-2 leading-loose text-vellum/80">دراسة تاريخية وكنسية لنظام الكراسي الرسولية الخمسة الكبرى (الإسكندرية، أنطاكية، أورشليم، روما، والقسطنطينية) والتدبير المجمعي للكنيسة الجامعة.</p>
                         <span class="mt-4 inline-flex items-center gap-2 text-gold font-semibold">افتح الصفحة <i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i></span>
                     </div>
                 </div>
