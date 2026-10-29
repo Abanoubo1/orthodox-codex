@@ -7,79 +7,170 @@
     <meta name="description" content="مستودع مفتوح لتوثيق وعرض الدراسات والتراث الكنسي الأرثوذكسي عبر صفحات تفاعلية.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
         tailwind.config = { theme: { extend: {
             fontFamily: { cairo: ['Cairo', 'sans-serif'] },
-            colors: { night: '#0E1424', lapis: '#1A2A4A', gold: '#C8A24A', vellum: '#E9E2D0', oxblood: '#9B3040' }
+            colors: {
+                night: '#0B101D',
+                lapis: '#121E36',
+                cardBg: 'rgba(18, 30, 54, 0.75)',
+                gold: '#C8A24A',
+                goldHover: '#DFBA63',
+                vellum: '#EAE3D2',
+                oxblood: '#9B3040'
+            }
         } } };
     </script>
     <script src="https://unpkg.com/lucide@0.460.0"></script>
     <style>
-        .halo { background: radial-gradient(60% 60% at 50% 0%, rgba(200,162,74,.18), transparent 70%); }
+        .halo {
+            background: radial-gradient(70% 55% at 50% 0%, rgba(200, 162, 74, 0.16), transparent 75%);
+        }
+        .codex-card {
+            background: rgba(18, 30, 54, 0.65);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(200, 162, 74, 0.22);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .codex-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(200, 162, 74, 0.65);
+            box-shadow: 0 16px 35px -8px rgba(0, 0, 0, 0.6), 0 0 25px -4px rgba(200, 162, 74, 0.2);
+        }
         :focus-visible { outline: 2px solid #C8A24A; outline-offset: 3px; }
         @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
     </style>
 </head>
-<body class="font-cairo bg-night text-vellum min-h-screen antialiased">
-    <header class="halo text-center px-6 pt-16 pb-12">
-        <i data-lucide="cross" class="mx-auto mb-4 h-10 w-10 text-gold" aria-hidden="true"></i>
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-gold">Orthodox Codex</h1>
-        <p class="mt-4 max-w-xl mx-auto text-lg leading-loose text-vellum/80">
-            مدوّنة مفتوحة تعرض التراث الكنسي الأرثوذكسي بمصادره، في صفحات تفاعلية.
+<body class="font-cairo bg-night text-vellum min-h-screen antialiased flex flex-col justify-between selection:bg-gold selection:text-night">
+
+    <!-- الهيدر الرئيسي -->
+    <header class="halo text-center px-4 pt-16 pb-14 border-b border-gold/10">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 text-gold mb-5 shadow-lg shadow-gold/10">
+            <i data-lucide="cross" class="h-8 w-8" aria-hidden="true"></i>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-black text-gold tracking-wide">Orthodox Codex</h1>
+        <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed text-vellum/80 font-normal">
+            مدوّنة تقنية مفتوحة لتوثيق وعرض التراث والدراسات الكنسية الأرثوذكسية عبر صفحات ويب وتطبيقات تفاعلية.
         </p>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 pb-20">
-        <h2 class="text-2xl font-extrabold mb-6">متاح الآن</h2>
+    <!-- المحتوى الرئيسي -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
         
-        <section class="space-y-6 mb-14">
-            <!-- كارت 1: القديس متى -->
-            <a href="topics/gospel-of-matthew/" class="group block rounded-2xl border border-gold/40 bg-lapis p-6 sm:p-8 transition hover:border-gold hover:-translate-y-1">
-                <div class="flex items-start gap-4">
-                    <i data-lucide="book-open" class="h-8 w-8 shrink-0 text-gold" aria-hidden="true"></i>
-                    <div>
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-white">القديس متى العشّار وإنجيله</h3>
-                        <p class="mt-2 leading-loose text-vellum/80">سيرته، لقب العشّار، أسلوب التدوين، المعجزات والأمثال والانفرادات، وملخص الأصحاحات الـ 28، مع نطق اسمه بست لغات.</p>
-                        <span class="mt-4 inline-flex items-center gap-2 text-gold font-semibold">افتح الصفحة <i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i></span>
-                    </div>
+        <!-- قسم: متاح الآن -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8 pb-3 border-b border-gold/15">
+                <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">متاح الآن</h2>
                 </div>
-            </a>
+                <span class="text-xs font-semibold text-gold/80 bg-gold/10 border border-gold/20 px-3 py-1 rounded-full">دراسات تفاعلية</span>
+            </div>
 
-            <!-- كارت 2: البنتارخيا -->
-            <a href="topics/the-pentarchy/" class="group block rounded-2xl border border-gold/40 bg-lapis p-6 sm:p-8 transition hover:border-gold hover:-translate-y-1">
-                <div class="flex items-start gap-4">
-                    <i data-lucide="landmark" class="h-8 w-8 shrink-0 text-gold" aria-hidden="true"></i>
+            <!-- شبكة الكروت (1 في الموبايل، 2 في التابلت، 3 في الشاشات الكبيرة) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- كارت 1: القديس متى -->
+                <a href="topics/gospel-of-matthew/" class="codex-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between group">
                     <div>
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-white">البنتارخيا: الخماسية الرسولية العظمى</h3>
-                        <p class="mt-2 leading-loose text-vellum/80">دراسة تاريخية وكنسية لنظام الكراسي الرسولية الخمسة الكبرى (الإسكندرية، أنطاكية، أورشليم، روما، والقسطنطينية) والتدبير المجمعي للكنيسة الجامعة.</p>
-                        <span class="mt-4 inline-flex items-center gap-2 text-gold font-semibold">افتح الصفحة <i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i></span>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 text-gold flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="book-open" class="h-6 w-6"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                                توثيق إنجيلي
+                            </span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-gold transition-colors mb-3 leading-snug">
+                            القديس متى العشّار وإنجيله
+                        </h3>
+                        <p class="text-sm leading-relaxed text-vellum/75 text-justify">
+                            سيرته، لقب العشّار وتواضعه، أسلوبه التدويني والمالي، المعجزات الـ 20، الأمثال الـ 10، وانفراداته، مع ميزة النطق الصوتي لاسمه بست لغات تاريخية.
+                        </p>
                     </div>
-                </div>
-            </a>
+                    <div class="pt-5 mt-6 border-t border-gold/15 flex items-center justify-between text-sm text-gold font-bold">
+                        <span>تصفح الدراسة</span>
+                        <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1.5 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- كارت 2: البنتارخيا -->
+                <a href="topics/the-pentarchy/" class="codex-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 text-gold flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="landmark" class="h-6 w-6"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full">
+                                تاريخ كنسي
+                            </span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-gold transition-colors mb-3 leading-snug">
+                            البنتارخيا: الخماسية الرسولية العظمى
+                        </h3>
+                        <p class="text-sm leading-relaxed text-vellum/75 text-justify">
+                            دراسة وثائقية لنظام الكراسي الرسولية التاريخية الخمسة (الإسكندرية، أنطاكية، أورشليم، روما، والقسطنطينية) ونظام التدبير المجمعي للكنيسة الجامعة.
+                        </p>
+                    </div>
+                    <div class="pt-5 mt-6 border-t border-gold/15 flex items-center justify-between text-sm text-gold font-bold">
+                        <span>تصفح الدراسة</span>
+                        <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1.5 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- الكارت الثالث مستقبلاً: عند إضافته سيأخذ المكان الثالث في هذا السطر تلقائياً وبنفس المقاس -->
+
+            </div>
         </section>
 
-        <h2 class="text-2xl font-extrabold mb-6">قيد التطوير</h2>
-        <section class="grid gap-4 sm:grid-cols-2" aria-label="موضوعات قيد التطوير">
-            <article class="rounded-2xl border border-vellum/15 bg-lapis/50 p-6 opacity-80">
-                <i data-lucide="columns-3" class="h-7 w-7 text-gold mb-3" aria-hidden="true"></i>
-                <h3 class="text-lg font-extrabold">مقارنة النصوص الإزائية</h3>
-                <p class="mt-2 leading-loose text-vellum/75">عرض متوازٍ لمتى ومرقس ولوقا لإبراز المشترك والمنفرد في كل رواية.</p>
-                <span class="mt-4 inline-block rounded-full border border-oxblood bg-oxblood/30 px-3 py-1 text-sm">قريباً</span>
-            </article>
-            <article class="rounded-2xl border border-vellum/15 bg-lapis/50 p-6 opacity-80">
-                <i data-lucide="calendar-days" class="h-7 w-7 text-gold mb-3" aria-hidden="true"></i>
-                <h3 class="text-lg font-extrabold">خوارزميات التقويم القبطي والأبقطي</h3>
-                <p class="mt-2 leading-loose text-vellum/75">شرح برمجي لتحويل التواريخ وحساب الأبقطي لتحديد موعد عيد القيامة.</p>
-                <span class="mt-4 inline-block rounded-full border border-oxblood bg-oxblood/30 px-3 py-1 text-sm">قريباً</span>
-            </article>
+        <!-- قسم: قيد التطوير -->
+        <section>
+            <div class="flex items-center justify-between mb-8 pb-3 border-b border-vellum/10">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="clock" class="w-5 h-5 text-oxblood"></i>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white">قيد التطوير</h2>
+                </div>
+                <span class="text-xs text-vellum/50 font-medium">مشاريع وأدوات قادمة</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="موضوعات قيد التطوير">
+                <article class="rounded-2xl border border-vellum/10 bg-lapis/40 p-6 flex flex-col justify-between opacity-85">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <i data-lucide="columns-3" class="h-6 w-6 text-gold/70"></i>
+                            <span class="rounded-full border border-oxblood/50 bg-oxblood/20 text-oxblood text-xs font-semibold px-2.5 py-0.5">قريباً</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">مقارنة النصوص الإزائية</h3>
+                        <p class="text-sm leading-relaxed text-vellum/70">
+                            أداة عرض متوازٍ لأناجيل متى ومرقس ولوقا لإبراز النصوص المشتركة والانفرادات الخاصة بكل بشارة وتوزيعها اللاهوتي.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="rounded-2xl border border-vellum/10 bg-lapis/40 p-6 flex flex-col justify-between opacity-85">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <i data-lucide="calendar-days" class="h-6 w-6 text-gold/70"></i>
+                            <span class="rounded-full border border-oxblood/50 bg-oxblood/20 text-oxblood text-xs font-semibold px-2.5 py-0.5">قريباً</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">خوارزميات التقويم القبطي والأبقطي</h3>
+                        <p class="text-sm leading-relaxed text-vellum/70">
+                            شرح وحاسبة برمجية متقدمة لتحويل التواريخ وحساب دورة الأبقطي لتحديد مواعيد عيد القيامة والأصوام الكنسية المتنقلة لأي عام.
+                        </p>
+                    </div>
+                </article>
+            </div>
         </section>
+
     </main>
 
-    <footer class="border-t border-vellum/10 py-8 text-center text-sm text-vellum/60">
-        مشروع مفتوح المصدر · المساهمات مرحّب بها عبر GitHub
+    <!-- الفوتر -->
+    <footer class="border-t border-gold/10 py-8 text-center text-xs text-vellum/60 bg-night/80 backdrop-blur-md">
+        Orthodox Codex · مشروع توثيقي كنسي مفتوح المصدر · 2026
     </footer>
+
     <script>lucide.createIcons();</script>
 </body>
 </html>
