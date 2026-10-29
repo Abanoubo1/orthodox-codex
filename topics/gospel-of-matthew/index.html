@@ -1,250 +1,917 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>القديس متى العشّار وإنجيله | Orthodox Codex</title>
-    <meta name="description" content="سيرة القديس متى الرسول العشّار وإنجيله: المعجزات والأمثال والانفرادات وملخص الأصحاحات والمصادر.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة التاريخية للقديس متى العشّار وإنجيله</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <script>
-        tailwind.config = { theme: { extend: {
-            fontFamily: { cairo: ['Cairo', 'sans-serif'] },
-            colors: { night: '#0E1424', lapis: '#1A2A4A', gold: '#C8A24A', vellum: '#E9E2D0', oxblood: '#9B3040' }
-        } } };
-    </script>
-    <script src="https://unpkg.com/lucide@0.460.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Animate.css للمؤثرات البصرية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Lucide Icons للأيقونات -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        .halo { background: radial-gradient(60% 70% at 50% 0%, rgba(200,162,74,.18), transparent 70%); }
-        html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
-        :focus-visible { outline: 2px solid #C8A24A; outline-offset: 3px; }
-        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0b0f19;
+        }
+        .lang-font {
+            font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+        }
+        .futuristic-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .futuristic-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.15);
+        }
+        .glow-text-white {
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.7), 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+        .glow-text-blue {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+        .holy-verse {
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(0, 210, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #00d2ff;
+            border-right: 4px solid #00d2ff;
+            display: block;
+            margin: 14px 0;
+            line-height: 1.8;
+            text-align: center;
+        }
     </style>
 </head>
-<body class="font-cairo bg-night text-vellum antialiased">
+<body class="text-gray-200 overflow-x-hidden">
 
-    <nav class="sticky top-0 z-20 border-b border-vellum/10 bg-night/95 backdrop-blur" aria-label="التنقل">
-        <div class="max-w-5xl mx-auto flex items-center gap-4 overflow-x-auto px-4 py-3 whitespace-nowrap text-sm">
-            <a href="../../" class="flex items-center gap-1 text-gold font-semibold"><i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i> الرئيسية</a>
-            <a href="#overview" class="hover:text-gold">نظرة عامة</a>
-            <a href="#story" class="hover:text-gold">السرد</a>
-            <a href="#publican" class="hover:text-gold">العشّار</a>
-            <a href="#style" class="hover:text-gold">التدوين</a>
-            <a href="#miracles" class="hover:text-gold">المعجزات</a>
-            <a href="#parables" class="hover:text-gold">الأمثال</a>
-            <a href="#unique" class="hover:text-gold">الانفرادات</a>
-            <a href="#chapters" class="hover:text-gold">الأصحاحات</a>
-            <a href="#sources" class="hover:text-gold">المصادر</a>
-        </div>
-    </nav>
+    <!-- خلفية مضيئة -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-indigo-900/10 blur-[120px]"></div>
+    </div>
 
-    <header class="halo px-6 pt-14 pb-10 text-center">
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-gold">القديس متى العشّار</h1>
-        <p class="mt-3 text-lg text-vellum/80">الرسول كاتب الإنجيل الأول</p>
-
-        <div class="mx-auto mt-8 max-w-3xl rounded-2xl border border-gold/30 bg-lapis p-5" aria-labelledby="voice-title">
-            <h2 id="voice-title" class="mb-4 flex items-center justify-center gap-2 font-extrabold"><i data-lucide="volume-2" class="h-5 w-5 text-gold" aria-hidden="true"></i> اسمه بست لغات</h2>
-            <div id="voices" class="grid grid-cols-2 gap-3 sm:grid-cols-3"></div>
-            <p id="voice-status" class="mt-4 min-h-[1.5rem] text-sm text-vellum/70" role="status" aria-live="polite"></p>
-            <p class="mt-1 text-xs leading-relaxed text-vellum/50">اللغات القديمة ليس لها أصوات رسمية في المتصفحات؛ ينطق المتصفح الاسم بأقرب صوت مثبّت على جهازك، فالنطق تقريبي.</p>
+    <!-- الهيدر والقائمة العلوية المحدثة -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/80 border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">
+                    <i data-lucide="book-open-check" class="w-5 h-5"></i>
+                </div>
+                <span class="text-lg md:text-xl font-black text-white tracking-wide">متى الإنجيلي</span>
+            </div>
+            <nav class="hidden xl:flex items-center gap-5 text-xs font-medium text-gray-400">
+                <a href="#about" class="hover:text-blue-400 transition-colors">نظرة عامة</a>
+                <a href="#languages" class="hover:text-blue-400 transition-colors">الاسم باللغات</a>
+                <a href="#story" class="hover:text-blue-400 transition-colors">القصة الكاملة</a>
+                <a href="#humility" class="hover:text-blue-400 transition-colors">لقب العشّار والتلاميذ</a>
+                <a href="#gospel-style" class="hover:text-blue-400 transition-colors">أسلوب الكتابة</a>
+                <a href="#miracles" class="hover:text-blue-400 transition-colors">المعجزات (20)</a>
+                <a href="#uniques" class="hover:text-blue-400 transition-colors">الانفرادات</a>
+                <a href="#parables" class="hover:text-blue-400 transition-colors">الأمثال (10)</a>
+                <a href="#gospel-summary" class="hover:text-blue-400 transition-colors">ملخص الإنجيل</a>
+                <a href="#sources" class="hover:text-blue-400 transition-colors">المصادر</a>
+            </nav>
+            <div>
+                <a href="#story" class="px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm shadow-lg shadow-blue-600/20 transition-all active:scale-95 flex items-center gap-2">
+                    <span>اقرأ السيرة</span>
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-5 pb-20 leading-loose">
+    <main class="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
 
-        <section id="overview" class="py-8">
-            <h2 class="mb-4 text-2xl font-extrabold text-gold">نظرة عامة</h2>
-            <p>متى أحد الاثني عشر رسولاً، كان عشّاراً (جابي ضرائب) في كفرناحوم حين دعاه المسيح ليتبعه (مت 9: 9). يُسمّى في إنجيلَي مرقس ولوقا «لاوي بن حلفى» (مر 2: 14، لو 5: 27)، وتتفق التقاليد الكنسية على أنه الشخص نفسه. وإنجيله هو الأول في ترتيب العهد الجديد، ويتألف من 28 أصحاحاً، ويُقدّم يسوع بوصفه المسيّا الموعود به في العهد القديم، ابن داود وابن إبراهيم.</p>
-            <p class="mt-3">يميّز هذا الدليل بين ما يقوله <strong>النص الكتابي</strong> وما ينقله <strong>التقليد الكنسي</strong>، وتُذكر المصادر في الجدول الأخير.</p>
+        <!-- القسم الرئيسي (Hero Section) -->
+        <section class="py-16 lg:py-24 flex flex-col items-center text-center relative">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-6 animate__animated animate__fadeInUp">
+                <i data-lucide="check-check" class="w-3.5 h-3.5"></i>
+                <span>النسخة التوثيقية الشاملة: تم توضيح سر لقب «متى العشّار» وموقف التلاميذ منه</span>
+            </div>
+            <h1 class="text-3xl md:text-6xl lg:text-7xl font-black text-white leading-[1.2] md:leading-[1.15] mb-6 max-w-4xl animate__animated animate__fadeInUp animate__delay-1s">
+                تحول جذري من جباية الأموال إلى <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent glow-text-blue">صناعة التاريخ</span>
+            </h1>
+            <p class="text-base md:text-xl text-gray-400 max-w-3xl mb-10 leading-relaxed animate__animated animate__fadeInUp animate__delay-2s">
+                توثيق تحليلي وتاريخي لسيرة القديس متى العشّار، نطق اسمه باللغات التاريخية، أسلوبه البنائي والمالي، قائمة معجزاته وانفراداته الحصرية، وشرح إنجيله بالتفصيل والمراجع.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md sm:max-w-none animate__animated animate__fadeInUp animate__delay-3s">
+                <a href="#story" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-gray-950 font-bold shadow-xl hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                    <span>سرد القصة بالترتيب</span>
+                </a>
+                <a href="#humility" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-300 font-bold hover:bg-blue-600/30 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                    <span>سر لقب العشّار</span>
+                </a>
+                <a href="#uniques" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gray-900 border border-gray-800 font-bold hover:bg-gray-800 transition-all text-gray-300 flex items-center justify-center gap-2">
+                    <i data-lucide="star" class="w-5 h-5"></i>
+                    <span>الانفرادات الحصرية</span>
+                </a>
+            </div>
         </section>
 
-        <section id="story" class="py-8">
-            <h2 class="mb-4 text-2xl font-extrabold text-gold">سرد قصصي</h2>
-            <p>جلس لاوي عند مكان الجباية، يعدّ الفضة لحساب روما. كان أهل بلده ينظرون إليه كخائن، فمن يجمع الضرائب للمحتل يُحسب خارج الجماعة. مرّ يسوع وقال له كلمة واحدة: «اتبعني». فترك مكانه وقام وتبعه (مت 9: 9؛ لو 5: 28).</p>
-            <p class="mt-3">ثم أقام وليمة كبيرة في بيته دعا إليها عشّارين وخطاة. اعترض الفريسيون، فأجاب المسيح: «لا يحتاج الأصحاء إلى طبيب بل المرضى... لم آتِ لأدعو أبراراً بل خطاة إلى التوبة» (مت 9: 12–13؛ لو 5: 29–32). وفي قائمة الرسل يُذكر باسمه ولقبه: «متى العشّار» (مت 10: 3).</p>
-            <p class="mt-3">يقول التقليد إنه كتب إنجيله أولاً لقرّاء من أصل يهودي، وإنه كرز بعد ذلك في بلاد متعددة. وتختلف الروايات في مكان كرازته واستشهاده، فلا يُجزم بتفصيل منها.</p>
+        <!-- قسم نظرة عامة (About) -->
+        <section id="about" class="py-12 border-t border-gray-900">
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="p-6 md:p-8 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                        <i data-lucide="user" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">الهوية والأسماء</h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        عُرِف في الأناجيل بـ "متى العشّار"[cite: 1]، ويربطه التقليد بالشخصية المسماة "لاوي بن حلفى" في إنجيل مرقس[cite: 1]؛ حيث كان لاوي اسمه الأصلي وتغير بعد اتباعه للمسيح[cite: 1]. موطنه الأصلي هو الجليل[cite: 1].
+                    </p>
+                </div>
+                <div class="p-6 md:p-8 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">الحياة قبل الدعوة</h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        كان يعمل موظف ضرائب في كفرناحوم تحت النظام الروماني[cite: 1]. وهي مهنة مكروهة يهودياً لارتباطها بالظلم[cite: 1]، لكنها أكسبته مهارات دقيقة في الحساب والسجلات والتدوين المنظم لاحقاً[cite: 1].
+                    </p>
+                </div>
+                <div class="p-6 md:p-8 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                        <i data-lucide="medal" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">الإرث والرمزية</h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        يُعتبر اليوم في التقليد المسيحي شفيساً للمحاسبين والماليين والبنكيين[cite: 1]. ويرمز له في الأيقونات بصورة "إنسان أو ملاك" لتركيز إنجيله المكثف على نسب المسيح البشري وتجسده[cite: 1].
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section id="publican" class="py-8">
-            <h2 class="mb-4 text-2xl font-extrabold text-gold">لقب العشّار وتواضعه</h2>
-            <p>لم يُخفِ متى ماضيه. في قائمة الرسل ذكر نفسه «العشّار» (مت 10: 3)، بينما كتب مرقس ولوقا اسم «لاوي» في خبر الدعوة دون وصمة اللقب. هذا ما يراه الآباء علامة تواضع: كاتب يذكر عن نفسه ما يخجل منه الناس.</p>
-            <p class="mt-3">ويرى المفسرون أن مهنته أفادته: فهو معتاد على الكتابة والحساب والتوثيق، وعلى الأرجح يتقن اليونانية والآرامية معاً، وهذا يفسّر دقة تنظيم إنجيله.</p>
+        <!-- قسم اللغات التاريخية والنطق الصوتي -->
+        <section id="languages" class="py-20 border-t border-gray-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-4">اسم القديس باللغات التاريخية المختلفة والنطق الصوتي</h2>
+                <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto">اضغط على زر الاستماع؛ تم تدعيم الأزرار كلياً لتعمل على جميع الهواتف الذكية دون استثناء</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 max-w-7xl mx-auto">
+                <div class="p-5 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 text-center flex flex-col justify-center items-center gap-2 shadow-xl">
+                    <span class="text-[10px] font-bold text-blue-400 tracking-wider uppercase">اللغة العبرية</span>
+                    <h3 class="text-2xl font-black text-white tracking-wide glow-text-white lang-font my-1">מַתִּתְܝָהוُ</h3>
+                    <p class="text-gray-400 text-[12px]">ينطق: <strong class="text-white">"مَتِتْيَاهُو"</strong></p>
+                    <button onclick="mobileFriendlySpeak('מַתִּתְܝָהוُ', 'he-IL', 'Matityahu', 1.0, 0.75)" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all flex items-center gap-1">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> <span>استمع</span>
+                    </button>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 text-center flex flex-col justify-center items-center gap-2 shadow-xl">
+                    <span class="text-[10px] font-bold text-indigo-400 tracking-wider uppercase">اللغة الآرامية</span>
+                    <h3 class="text-2xl font-black text-white tracking-wide glow-text-white lang-font my-1">ܡܬܝ</h3>
+                    <p class="text-gray-400 text-[12px]">ينطق: <strong class="text-white">"مَـتـيْ"</strong></p>
+                    <button onclick="mobileFriendlySpeak('مَـتـيْ', 'ar-EG', 'Maattai', 0.8, 0.65)" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all flex items-center gap-1">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> <span>استمع</span>
+                    </button>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 text-center flex flex-col justify-center items-center gap-2 shadow-xl">
+                    <span class="text-[10px] font-bold text-teal-400 tracking-wider uppercase">اللغة السريانية</span>
+                    <h3 class="text-2xl font-black text-white tracking-wide glow-text-white lang-font my-1">ܡܲܬܲܝ</h3>
+                    <p class="text-gray-400 text-[12px]">ينطق: <strong class="text-white">"مَتَّايْ"</strong></p>
+                    <button onclick="mobileFriendlySpeak('مَتَّايْ', 'ar-EG', 'Mat-tai', 1.2, 0.80)" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-teal-500/10 text-teal-400 hover:bg-teal-600 hover:text-white transition-all flex items-center gap-1">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> <span>استمع</span>
+                    </button>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 text-center flex flex-col justify-center items-center gap-2 shadow-xl">
+                    <span class="text-[10px] font-bold text-amber-400 tracking-wider uppercase">اللغة القبطية</span>
+                    <h3 class="text-2xl font-black text-white tracking-wide glow-text-white lang-font my-1">ⲙⲁⲑⲑⲉⲟⲥ</h3>
+                    <p class="text-gray-400 text-[12px]">ينطق: <strong class="text-white">"مَاتْثِيُوسْ"</strong></p>
+                    <button onclick="mobileFriendlySpeak('مَاتْثِيُوسْ', 'ar-EG', 'Mattheos', 1.0, 0.75)" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-400 hover:bg-amber-600 hover:text-white transition-all flex items-center gap-1">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> <span>استمع</span>
+                    </button>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 text-center flex flex-col justify-center items-center gap-2 shadow-xl">
+                    <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase">اليونانية القديمة</span>
+                    <h3 class="text-2xl font-black text-white tracking-wide glow-text-white lang-font my-1">Ματθαῖος</h3>
+                    <p class="text-gray-400 text-[12px]">ينطق: <strong class="text-white">"مَاتْثَايُوسْ"</strong></p>
+                    <button onclick="mobileFriendlySpeak('Ματθαῖος', 'el-GR', 'Matthaios', 1.0, 0.75)" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 hover:bg-purple-600 hover:text-white transition-all flex items-center gap-1">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> <span>استمع</span>
+                    </button>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 text-center flex flex-col justify-center items-center gap-2 shadow-xl">
+                    <span class="text-[10px] font-bold text-pink-400 tracking-wider uppercase">اللغة الإنجليزية</span>
+                    <h3 class="text-xl font-extrabold text-white tracking-wide glow-text-white lang-font my-1">Matthew</h3>
+                    <p class="text-gray-400 text-[12px]">ينطق: <strong class="text-white">"مَاثْيُو"</strong></p>
+                    <button onclick="mobileFriendlySpeak('Matthew', 'en-US', 'Matthew', 1.0, 0.75)" class="mt-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-pink-500/10 text-pink-400 hover:bg-pink-600 hover:text-white transition-all flex items-center gap-1">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> <span>استمع</span>
+                    </button>
+                </div>
+            </div>
         </section>
 
-        <section id="style" class="py-8">
-            <h2 class="mb-4 text-2xl font-extrabold text-gold">أسلوب التدوين</h2>
-            <ul class="list-disc space-y-2 pr-6">
-                <li><strong>خمس مجموعات تعليمية:</strong> الموعظة على الجبل (5–7)، إرسالية الرسل (10)، أمثال الملكوت (13)، الحياة في الكنيسة (18)، الأحاديث الأخيرة (24–25)، وكلٌّ منها يُختم بعبارة قريبة من «لما أكمل يسوع هذه الأقوال» (مت 7: 28؛ 11: 1؛ 13: 53؛ 19: 1؛ 26: 1).</li>
-                <li><strong>صيغة التحقيق:</strong> «لكي يتم ما قيل بالنبي...» تتكرر مراراً لربط الأحداث بالنبوات (مت 1: 22؛ 2: 15، 17، 23؛ 4: 14؛ 8: 17؛ 12: 17؛ 21: 4؛ 27: 9).</li>
-                <li><strong>تعبير «ملكوت السماوات»</strong> بدلاً من «ملكوت الله» تحاشياً لنطق اسم الله، على عادة القرّاء اليهود.</li>
-                <li><strong>النظام والتقسيم:</strong> فهرسة في ثلاثيات وسباعيات (الأنساب في ثلاث مجموعات من 14 جيلاً، مت 1: 17).</li>
-            </ul>
+        <!-- قسم السرد القصصي المتكامل بنصوص الآيات الكاملة المضيئة -->
+        <section id="story" class="py-20 border-t border-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-2xl md:text-5xl font-black text-white mb-4">السرد القصصي المتكامل لحياة الرسول</h2>
+                    <p class="text-gray-400 text-sm md:text-base">تابع أحداث القصة كاملة بالترتيب التاريخي والمنطقي بنصوص شديدة الوضوح للموبايل</p>
+                </div>
+
+                <div class="space-y-8 md:space-y-12">
+                    <div class="p-6 md:p-10 rounded-3xl bg-gray-900/60 border border-gray-800/80 relative shadow-2xl">
+                        <span class="absolute top-4 left-4 md:top-6 md:left-6 text-[10px] md:text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full">الفصل الأول</span>
+                        <h3 class="text-xl md:text-3xl font-black text-white mb-5 flex items-center gap-3 glow-text-white">
+                            <i data-lucide="map-pin" class="text-blue-400 w-6 h-6 md:w-7 md:h-7"></i>
+                            <span>1. مركز جمركي إستراتيجي، ثقافة رفيعة وتديّن قبل المسيح</span>
+                        </h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-justify font-medium">
+                            بدأت الحكاية في مدينة **كفرناحوم** الواقعة في منطقة الجليل، حيث كان هناك رجل يُدعى **لاوي بن حلفى**[cite: 1]. ولم يكن مركزه الضرائبي هناك اعتيادياً، بل كان يقع على **طريق البحر الإستراتيجي الدولي (Via Maris)** الرابط بين مصر العريقة وسوريا ودمشق، مما يعني أنه كان مسؤولاً عن تفتيش البضائع الدولية وجباية المكوس من تجار الأمم المختلفة. هذا الموقع تطلب شخصاً **متعلماً تعليماً عالياً ومميزاً** بمقاييس عصره؛ حيث كان يتقن مهارات الكتابة، التوثيق، وإمساك السجلات الحسابية المنظمة بدقة[cite: 1]. أما عن لغته الأصلية التي كان يتحدث بها في حياته اليومية فكانت **اللغة الآرامية** (لغة البلاد العامة)[cite: 1]، ولكنه كان يتقن أيضاً **اللغة اليونانية** بحكم تعاملاته الإدارية والضرائبية مع التجار وممثلي السلطة الرومانية. وتشير الدراسات التاريخية والآبائية إلى صلة قرابة محتملة تجمع بين متى والتلميذ الآخر **يعقوب بن حلفى**، حيث يُعتقد أنهما كانا شقيقين نظراً لاشتراكهما في اسم الأب "حلفى". من الناحية الدينية قبل المسيح، كان متى يُعتبر **غير متدين وخارجاً عن الناموس والتقليد اليهودي المستقر**؛ فوظيفته في جباية الضرائب لصالح الرومان جعلت المجتمع والفريسيين يصنفونه كـ "خاطئ" منبوذ يتعامل بالربا والظلم والابتزاز، وبالتالي لم يكن يمارس تديناً مقبولاً في نظر مجتمعه المحلي[cite: 1].
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-10 rounded-3xl bg-gray-900/60 border border-gray-800/80 relative shadow-2xl">
+                        <span class="absolute top-4 left-4 md:top-6 md:left-6 text-[10px] md:text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full">الفصل الثاني</span>
+                        <h3 class="text-xl md:text-3xl font-black text-white mb-5 flex items-center gap-3 glow-text-white">
+                            <i data-lucide="log-in" class="text-indigo-400 w-6 h-6 md:w-7 md:h-7"></i>
+                            <span>2. كلمة واحدة غيّرت كل شيء: "اتبعني"</span>
+                        </h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-justify font-medium">
+                            في يوم عادي، وبينما كان لاوي جالساً في مكان الجباية يجمع الأموال ويدوّن الحسابات[cite: 1]، مرّ به يسوع الناصري[cite: 1]. تطلع يسوع إليه وقال له كلمة واحدة وبسيطة لكنها حملت قوة غيّرت مجرى حياته بالكامل:
+                            <span class="holy-verse">"وَفِيمَا يَسُوعُ مُجْتَازٌ مِنْ هُنَاكَ، رَأَى إِنْسَانًا جَالِسًا عِنْدَ مَكَانِ الْجِبَايَةِ، اسْمُهُ مَتَّى. فَقَالَ لَهُ: «اتْبَعْنِي». فَقَامَ وَتَبِعَهُ." (إنجيل متى 9: 9)</span>[cite: 1]
+                            وفي استجابة فورية مذهلة وطاعة فائقة، ترك لاوي في تلك اللحظة طاولته، وسجلاته، وأمواله، ووظيفته الحكومية المربحة ونفوذه، وقام وتبع يسوع ليصبح منذ تلك اللحظة تلميذاً ورسولاً له، وصار يُعرف في الأناجيل باسمه الجديد: **متى** (والذي يعني عطية الله)[cite: 1].
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-10 rounded-3xl bg-gray-900/60 border border-gray-800/80 relative shadow-2xl">
+                        <span class="absolute top-4 left-4 md:top-6 md:left-6 text-[10px] md:text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full">الفصل الثالث</span>
+                        <h3 class="text-xl md:text-3xl font-black text-white mb-5 flex items-center gap-3 glow-text-white">
+                            <i data-lucide="utensils" class="text-purple-400 w-6 h-6 md:w-7 md:h-7"></i>
+                            <span>3. وليمة العشارين وإعلان الرحمة للمرضى روحيّاً</span>
+                        </h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-justify font-medium">
+                            تعبيراً عن فرحته الجارفة بهذا التحول الفوري والنداء الجديد، أقام متى وليمة عشاء كبرى في بيته على شرف يسوع، وقام بدعوة زملائه القدامى من العشارين والأشخاص المصنفين كـ "خطاة" في المجتمع اليهودي ليعرّفهم بالمسيح[cite: 1]. عندما رأى الفريسيون (رجال الدين المتزمتون) هذا المشهد، انتقدوا يسوع بشدة قائلين: "لماذا يأكل معلمكم مع العشارين والخطاة؟"[cite: 1]. فجاءهم رد يسوع الحاسم الذي صاغ جوهر رسالته عبر هذه الآية العظيمة:
+                            <span class="holy-verse">"فَلَمَّا سَمِعَ يَسُوعُ قَالَ لَهُمْ: «لاَ يَحْتَاجُ الأَصِحَّاءُ إِلَى طَبِيبٍ بَلِ الْمَرْضَى... لأَنِّي لَمْ آتِ لأَدْعُوَ أَبْرَارًا بَلْ خُطَاةً إِلَى التَّوْبَةِ»." (إنجيل متى 9: 12-13)</span>[cite: 1]
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-10 rounded-3xl bg-gray-900/60 border border-gray-800/80 relative shadow-2xl">
+                        <span class="absolute top-4 left-4 md:top-6 md:left-6 text-[10px] md:text-xs font-mono bg-pink-500/10 text-pink-400 border border-pink-500/20 px-3 py-1 rounded-full">الفصل الرابع</span>
+                        <h3 class="text-xl md:text-3xl font-black text-white mb-5 flex items-center gap-3 glow-text-white">
+                            <i data-lucide="pen-tool" class="text-pink-400 w-6 h-6 md:w-7 md:h-7"></i>
+                            <span>4. تدوين البشارة الأولى والجمهور المستهدف</span>
+                        </h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-justify font-medium">
+                            عاش متى مع يسوع كتلميذ مخلص، وشهد معجزاته وتعاليمه، وصار عنصراً أساسياً في المجموعة الرسولية، وشهد القيامة وحلّ عليه الروح القدس في يوم العنصرة[cite: 1]. سخر متى خلفيته الثقافية وقدرته السابقة على التدوين لخدمة الإيمان[cite: 1]؛ وبحسب التقليد الكنسي المستقر، قام بتدوين **"إنجيل متى"**[cite: 1]. **اللغة الأصلية لإنجيله** كُتبت أولاً **باللغة العبرية (أو الآرامية)** لجمهور مستهدف محدد وهم **المؤمنون من خلفية يهودية**، ليثبت لهم عبر استشهادات مكثفة من نبوات العهد القديم أن يسوع هو بالفعل المسيا المنتظر[cite: 1]، ثم ظهرت لاحقاً النسخة اليونانية المتداولة عالمياً[cite: 1]. وفيما يتعلق بإنتاجه الكتابي، **لم يكتب متى أي شيء آخر أو رسائل أخرى** معتمدة داخل أسفار العهد الجديد، واقتصر عمله التدويني الموثق تاريخياً على هذا الإنجيل الفريد فقط[cite: 1].
+                        </p>
+                    </div>
+
+                    <div class="p-6 md:p-10 rounded-3xl bg-gray-900/60 border border-gray-800/80 relative shadow-2xl">
+                        <span class="absolute top-4 left-4 md:top-6 md:left-6 text-[10px] md:text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full">الفصل الخامس</span>
+                        <h3 class="text-xl md:text-3xl font-black text-white mb-5 flex items-center gap-3 glow-text-white">
+                            <i data-lucide="globe" class="text-emerald-400 w-6 h-6 md:w-7 md:h-7"></i>
+                            <span>5. الرحلة إلى الشرق، الشهادة الأخيرة، ومصداقية الإرسالية الكبرى</span>
+                        </h3>
+                        <p class="text-white text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-justify font-medium">
+                            بعد تبشيره لعدة سنوات في أورشليم واليهودية (نحو 10 إلى 15 عاماً)[cite: 1]، انطلق متى مستخدمًا لغاته وثقافته المرنة في رحلات تبشيرية شاقة نحو بلاد الشرق متسلحاً بالوصية الختامية العظمى لإنجيله والتي دوّن نصها الكامل هكذا:
+                            <span class="holy-verse">"فَاذْهَبُوا وَتَلْمِذُوا جَمِيعَ الأُمَمِ وَعَمِّدُوهُمْ بِاسْمِ الآبِ وَالابْنِ وَالرُّوحِ الْقُدُسِ. وَعَلِّمُوهُمْ أَنْ يَحْفَظُوا جَمِيعَ مَا أَوْصَيْتُكُمْ بِهِ. وَهَا أَنَا مَعَكُمْ كُلَّ الأَيَّامِ إِلَى انْقِضَاءِ الدَّهْرِ. آمِينَ." (إنجيل متى 28: 19-20)</span>[cite: 1]
+                            تذكر الروايات التاريخية المتواترة أنه زار مقدونيا، سوريا، بلاد فارس، والمنطقة المعروفة بـ **"أثيوبيا الشرقية"**[cite: 1]. هناك، نجح في تثبيت إيمان الأميرة "إفجينيا" ونذرها للبتولية[cite: 1]، وتختتم التقاليد سيرته بأنه نال إكليل الشهادة والاستشهاد في ستينيات القرن الأول الميلادي (حوالي عام 68 م)[cite: 1]، حيث قُتل طعناً أو قطع رأس دفاعاً عن بشارته[cite: 1]. ومن الحقائق المهمة التي يذكرها التقليد الغربي الروماني أن رفات وجسد القديس متى نُقلت تاريخياً في القرن العاشر الميلادي واستقرت في **كاتدرائية ساليرنو (Salerno Cathedral) في إيطاليا**، حيث يُحتفظ بجسده داخل سرداب الكاتدرائية حتى يومنا هذا كمزار شهير.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="miracles" class="py-8">
-            <h2 class="mb-1 text-2xl font-extrabold text-gold">20 معجزة في إنجيل متى</h2>
-            <p class="mb-4 text-sm text-vellum/60">حسب عدّ شائع للمعجزات المسجلة بتفصيل؛ ويختلف العدّ قليلاً بين الدارسين.</p>
-            <ol id="miracles-list" class="list-decimal space-y-2 pr-6"></ol>
+        <!-- قسم جديد: لقب متى العشّار بين تواضع الكاتب وأدب التلاميذ (NEW SECTION) -->
+        <section id="humility" class="py-20 border-t border-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-4">
+                        <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
+                        <span>دراسة مقارنة في نصوص الأناجيل الأربعة</span>
+                    </div>
+                    <h2 class="text-2xl md:text-4xl font-black text-white mb-3 tracking-wide">لقب «متى العشّار»: بين تواضع الكاتب وأدب التلاميذ</h2>
+                    <p class="text-gray-400 text-sm max-w-2xl mx-auto">هل كان متى يُطلق هذا اللقب على نفسه؟ وهل ناداه به رفقاؤه التلاميذ بعد اتباعه للمسيح؟</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- كرت متى -->
+                    <div class="p-6 md:p-8 rounded-2xl bg-gray-900/60 border border-gray-800 futuristic-card flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                            <i data-lucide="user-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white glow-text-white">متى يلقّب نفسه تواضعاً واعترافاً بالنعمة</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed text-justify">
+                            **نعم، متى هو الوحيد الذي أطلق على نفسه لقب "العشّار" صراحةً.** فعندما دوّن قائمة الرسل الاثني عشر في إنجيله، لم يخجل من ماضيه المنبوذ، بل كتب اسمه مقترناً بمهنته السابقة بكل انسحاق:
+                        </p>
+                        <span class="holy-verse text-xs">«فِيلُبُّسُ وَبَرْتُولَمَاوُسُ. تُومَا وَمَتَّى الْعَشَّارُ. يَعْقُوبُ بْنُ حَلْفَى وَلَبَّاوُسُ الْمُلَقَّبُ تَدَّاوُسَ» (متى 10: 3)</span>
+                        <p class="text-gray-400 text-xs leading-relaxed text-justify">
+                            أراد متى أن يُبرز كيف أن نعمة المسيح قادرة على انتشال الإنسان من أحطّ المهن الاجتماعية والدينية ليصير رسولاً كارزاً، وشاهداً حياً على أن المسيح جاء ليدعو خطاة لا أبراراً.
+                        </p>
+                    </div>
+
+                    <!-- كرت التلاميذ -->
+                    <div class="p-6 md:p-8 rounded-2xl bg-gray-900/60 border border-gray-800 futuristic-card flex flex-col gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white glow-text-white">التلاميذ يمتنعون عن تلقيبه احتراماً ومحبة</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed text-justify">
+                            **لا، لم يُطلق عليه أي تلميذ أو بشير آخر لقب "العشّار" بعد الدعوة نهائياً.** احترم التلاميذ كرامته وتستروا على ماضيه في قوائم الرسل:
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 font-bold">•</span>
+                                <span>**مرقس الرسول:** كتب في قائمته: «وَمَتَّى، وَتُومَا، وَيَعْقُوبَ بْنَ حَلْفَى» (مرقس 3: 18) مجرداً من اللقب.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 font-bold">•</span>
+                                <span>**لوقا الإنجيلي:** كتب في قائمته: «تُومَا وَمَتَّى، وَيَعْقُوبَ بْنَ حَلْفَى» (لوقا 6: 15) دون أي ذكر لوظيفته السابقة.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 font-bold">•</span>
+                                <span>**سفر أعمال الرسل:** عند اجتماع الرسل في العلية بعد الصعود، كُتب: «تُومَا وَمَتَّى» (أعمال 1: 13) كرسول مكرّم.</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-400 text-xs leading-relaxed text-justify mt-1">
+                            وهكذا يظهر التباين الرائع: متى يُشهّر بضعفه القديم ليمجد الله، والتلاميذ يتسترون عليه بمحبة أخوية مسيحية رفيعة.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="parables" class="py-8">
-            <h2 class="mb-1 text-2xl font-extrabold text-gold">10 أمثال</h2>
-            <p class="mb-4 text-sm text-vellum/60">أمثال انفرد بها متى أو ظهرت عنده بأوضح صورة.</p>
-            <ol id="parables-list" class="list-decimal space-y-2 pr-6"></ol>
+        <!-- قسم أسلوب متى في الكتابة -->
+        <section id="gospel-style" class="py-16 border-t border-gray-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-3 tracking-wide">أسلوب القديس متى في الكتابة والتدوين</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto">تحليل تفصيلي لكيفية تأثير خلفية متى الحسابية والضرائبية على صياغته الإنجيلية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                        <i data-lucide="arrow-down-z-a" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">التنظيم الموضوعي الدقيق</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        لم يعتمد متى الترتيب الزمني الصارم للأحداث، بل جمع المواد المتشابهة معاً في مجموعات لاهوتية وتعليمية منظمة لخدمة غرضه البشاري؛ كجمع المعجزات في الأصحاحين 8 و9، والأمثال في الأصحاح 13.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">البناء الهيكلي الخماسي</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        صاغ إنجيله في خمس كتل تعليمية كبرى تحاكي أسفار التوراة الخمسة لموسى، وتنتهي كل كتلة بعبارة خاتمة موحدة: <span class="text-white font-semibold">«ولما أكمل يسوع هذه الأقوال»</span> لتأكيد الشريعة الجديدة.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                        <i data-lucide="binary" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">الدقة المالية والحسابية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        تنعكس مهنته السابقة كعشّار بوضوح؛ فهو الإنجيل الأكثر ذكراً للعملات (الإستار، الدرهم، الوزنات، الثلاثين من الفضة)، مع اهتمام لافت بالأرقام والترتيب العددي كتقسيم الأنساب إلى 3 مجموعات كل منها 14 جيلاً.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl futuristic-card flex flex-col gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center">
+                        <i data-lucide="scroll" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">الأسلوب التوثيقي الاستشهادي</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        اعتمد صيغة متكررة تلائم القارئ اليهودي: <span class="text-white font-semibold">«لكي يتم ما قيل بالرب بالنبي القائل»</span>، رابطاً كل تفصيلة في حياة المسيح وموته بمقابلها من نبوات العهد القديم.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section id="unique" class="py-8">
-            <h2 class="mb-1 text-2xl font-extrabold text-gold">11 انفراداً</h2>
-            <p class="mb-4 text-sm text-vellum/60">أحداث وأقوال ينفرد بها متى بين الأناجيل الأربعة.</p>
-            <ol id="unique-list" class="list-decimal space-y-2 pr-6"></ol>
+        <!-- قسم المعجزات المذكورة في إنجيل متى (20 معجزة) -->
+        <section id="miracles" class="py-20 border-t border-gray-900">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-4">
+                    <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+                    <span>سلطان المسيح الملوكي على المرض، الطبيعة، الأرواح، والموت</span>
+                </div>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-3 tracking-wide">المعجزات المذكورة في إنجيل متى</h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">استعراض منظم لأبرز المعجزات الـ 20 التي دوّنها متى في إنجيله بالشواهد النصية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 01</span>
+                    <h4 class="text-white font-bold text-sm mb-1">تطهير الأبرص</h4>
+                    <p class="text-gray-400 text-xs">«فَمَدَّ يَسُوعُ يَدَهُ وَلَمَسَهُ قَائِلاً: أُرِيدُ، فَاطْهُرْ» (متى 8: 1-4)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 02</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء غلام قائد المئة</h4>
+                    <p class="text-gray-400 text-xs">«قُلْ كَلِمَةً فَقَطْ فَيَبْرَأَ غُلاَمِي» (متى 8: 5-13)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 03</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء حماة بطرس من الحمى</h4>
+                    <p class="text-gray-400 text-xs">«فَلَمَسَ يَدَهَا فَتَرَكَتْهَا الْحُمَّى، فَقَامَتْ وَخَدَمَتْهُمْ» (متى 8: 14-15)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 04</span>
+                    <h4 class="text-white font-bold text-sm mb-1">تهدئة عاصفة البحر</h4>
+                    <p class="text-gray-400 text-xs">«فَقَامَ وَانْتَهَرَ الرِّيَاحَ وَالْبَحْرَ، فَصَارَ هُدُوءٌ عَظِيمٌ» (متى 8: 23-27)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 05</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء مجنونَي الجدريين</h4>
+                    <p class="text-gray-400 text-xs">إخراج الشياطين إلى قطيع الخنازير (متى 8: 28-34)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 06</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء المفلوج المدلى</h4>
+                    <p class="text-gray-400 text-xs">«مَغْفُورَةٌ لَكَ خَطَايَاكَ... قُمِ احْمِلْ فِرَاشَكَ وَاذْهَبْ» (متى 9: 1-8)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 07</span>
+                    <h4 class="text-white font-bold text-sm mb-1">إقامة ابنة يايرس من الموت</h4>
+                    <p class="text-gray-400 text-xs">«الصَّبِيَّةُ لَمْ تَمُتْ لَكِنَّهَا نَائِمَةٌ... فَقَامَتِ الصَّبِيَّةُ» (متى 9: 18-26)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 08</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء نازفة الدم</h4>
+                    <p class="text-gray-400 text-xs">«إِيمَانُكِ قَدْ شَفَاكِ. فَشُفِيَتِ الْمَرْأَةُ مِنْ تِلْكَ السَّاعَةِ» (متى 9: 20-22)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 09</span>
+                    <h4 class="text-white font-bold text-sm mb-1">تفتيح عيني الأعميين (حصري)</h4>
+                    <p class="text-gray-400 text-xs">«ارْحَمْنَا يَا ابْنَ دَاوُدَ... بِحَسَبِ إِيمَانِكُمَا لِيَكُنْ لَكُمَا» (متى 9: 27-31)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 10</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء الأخرس المجنون (حصري)</h4>
+                    <p class="text-gray-400 text-xs">«فَلَمَّا أُخْرِجَ الشَّيْطَانُ تَكَلَّمَ الأَخْرَسُ» (متى 9: 32-34)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 11</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء صاحب اليد اليابسة</h4>
+                    <p class="text-gray-400 text-xs">«مُدَّ يَدَكَ. فَمَدَّهَا، فَعَادَتْ صَحِيحَةً كَالأُخْرَى» (متى 12: 9-14)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 12</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء مجنون أعمى وأخرس</h4>
+                    <p class="text-gray-400 text-xs">شفاء كامل ودحض تهمة بعلزبول (متى 12: 22-24)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 13</span>
+                    <h4 class="text-white font-bold text-sm mb-1">إشباع الـ 5 آلاف</h4>
+                    <p class="text-gray-400 text-xs">بخمس خبزات وسمكتين وفضل 12 قفة (متى 14: 13-21)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 14</span>
+                    <h4 class="text-white font-bold text-sm mb-1">المشي على ماء البحيرة</h4>
+                    <p class="text-gray-400 text-xs">مشي يسوع ونزول بطرس على الماء (متى 14: 22-33)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 15</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء ابنة الكنعانية</h4>
+                    <p class="text-gray-400 text-xs">«يَا امْرَأَةُ، عَظِيمٌ إِيمَانُكِ! لِيَكُنْ لَكِ كَمَا تُرِيدِينَ» (متى 15: 21-28)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 16</span>
+                    <h4 class="text-white font-bold text-sm mb-1">إشباع الـ 4 آلاف</h4>
+                    <p class="text-gray-400 text-xs">بسبع خبزات وقليل من صغار السمك (متى 15: 32-39)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 17</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء المصروع</h4>
+                    <p class="text-gray-400 text-xs">شفاء الغلام الذي يعذب بالقمر (متى 17: 14-21)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 18</span>
+                    <h4 class="text-white font-bold text-sm mb-1">الإستار في فم السمكة (حصري)</h4>
+                    <p class="text-gray-400 text-xs">سداد ضريبة الدرهمين عن يسوع وبطرس (متى 17: 24-27)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 19</span>
+                    <h4 class="text-white font-bold text-sm mb-1">لعن شجرة التين ويباسها</h4>
+                    <p class="text-gray-400 text-xs">«فَيَبِسَتِ التِّينَةُ فِي الْحَالِ» (متى 21: 18-22)</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-950/60 border border-gray-800 hover:border-blue-500/40 transition-colors">
+                    <span class="text-xs font-mono text-blue-400 block mb-1">معجزة 20</span>
+                    <h4 class="text-white font-bold text-sm mb-1">شفاء أعميي أريحا</h4>
+                    <p class="text-gray-400 text-xs">«فَتَحَنَّنَ يَسُوعُ وَلَمَسَ أَعْيُنَهُمَا فَلِلْوَقْتِ أَبْصَرَتْ» (متى 20: 29-34)</p>
+                </div>
+            </div>
         </section>
 
-        <section id="chapters" class="py-8">
-            <h2 class="mb-4 text-2xl font-extrabold text-gold">ملخص الأصحاحات الـ 28</h2>
-            <div id="chapters-list" class="space-y-2"></div>
+        <!-- قسم المعجزات والأحداث التي انفرد بها متى (مدققة ومعدلة كلياً) -->
+        <section id="uniques" class="py-20 border-t border-gray-900">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold mb-4">
+                    <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                    <span>الفحص والمقارنة النصية الدقيقة مع سائر الأناجيل</span>
+                </div>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-3 tracking-wide">أحداث ومعجزات انفرد بها إنجيل متى فقط</h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">معجزات وأحداث تاريخية حصرية لم يذكرها مرقس أو لوقا أو يوحنا إطلاقاً</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="coins" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">معجزة الإستار في فم السمكة (متى 17: 24-27)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        معجزة مالية حصرية تماماً لمتى لسداد ضريبة الهيكل (الدرهمين)، بأمر بطرس بإلقاء الصنارة وأخذ أول سمكة ليجد في فمها عملة الإستار الفضية.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                        <i data-lucide="eye" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">شفاء أعميين يستغيثان بـ «ابن داود» (متى 9: 27-31)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        معجزة شفاء حصرية تمت داخل البيت في كفرناحوم لأعميين استغاثا بلقب المسيا الداودي، ولم ترد تفاصيلها في أي إنجيل آخر.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                        <i data-lucide="mic-off" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">شفاء الأخرس المجنون وتعجب الجمع (متى 9: 32-34)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        معجزة حصرية أعقبت شفاء الأعميين؛ حيث تكلم الأخرس بمجرد إخراج الشيطان وتعجبت الجموع قائلين: «لم يظهر قط مثل هذا في إسرائيل!».
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                        <i data-lucide="compass" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">زيارة مجوس المشرق وسجودهم (متى 2: 1-12)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        ظهور النجم بالمشرق ومجيء المجوس بالذهب واللبان والمُر للسجود لملك اليهود، وخداعهم لهيرودس الملك بالرجوع في طريق آخر.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                        <i data-lucide="shield" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">رؤى وأحلام يوسف النجار الأربعة (متى 1 و 2)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        إعلانات الملاك ليوسف في الحلم: طمأنته بشأن ولادة عمانوئيل، أمره بالهرب لمصر، أمره بالرجوع، وتوجيهه للسكنى بالناصرة.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center">
+                        <i data-lucide="baby" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">مذبحة بيت لحم والهروب لمصر (متى 2: 13-18)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        أمر هيرودس بقتل أطفال بيت لحم من ابن سنتين فما دون، ولجوء العائلة المقدسة إلى مصر تحقيقاً لنبوة «من مصر دعوت ابني».
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center">
+                        <i data-lucide="waves" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">نزول بطرس وغرقه بالشك (متى 14: 28-31)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        المشي العام على الماء مشترك، لكن نزول بطرس نفسه من السفينة والمشي على الماء وبدء غرقه وعتاب يسوع «لِمَاذَا شَكَكْتَ؟» انفرد به متى حصراً.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center">
+                        <i data-lucide="scale" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">حلم زوجة بيلاطس وغسل يديه (متى 27: 19، 24)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        تحذير زوجة بيلاطس له: «إِيَّاكَ وَذلِكَ الْبَارَّ لأَنِّي تَأَلَّمْتُ فِي حُلْمٍ مِنْ أَجْلِهِ»، وغسل بيلاطس يديه أمام الجمع معلناً براءته من دمه.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center">
+                        <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">مصير يهوذا وحقل الفخاري (متى 27: 3-10)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        ندم يهوذا، إلقاء الثلاثين من الفضة في الهيكل وموته شنقاً، وشراء رؤساء الكهنة حقل الفخاري ليُسمى «حقل الدم» إتماماً للنبوة.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="sun" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">زلزلة الصلب وقيام القديسين (متى 27: 51-53)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        الزلزلة العظيمة عند تسليم الروح، تشقق الصخور، تفتح القبور، وقيام كثير من أجساد القديسين الراقدين وظهورهم في أورشليم بعد قيامته.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 futuristic-card flex flex-col gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white glow-text-white">حراسة القبر ورشوة الجنود (متى 27: 62-66 و 28: 11-15)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed text-justify">
+                        وضع الحراسة الرومانية وختم الحجر، ثم إعطاء رؤساء الكهنة رشوة مالية للجنود ليذيعوا إشاعة سرقة الجسد أثناء نومهم.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section id="sources" class="py-8">
-            <h2 class="mb-4 text-2xl font-extrabold text-gold">المصادر والمراجع</h2>
-            <div class="overflow-x-auto rounded-xl border border-vellum/15">
-                <table class="w-full min-w-[34rem] text-right text-sm">
-                    <caption class="sr-only">جدول مصادر سيرة القديس متى</caption>
-                    <thead class="bg-lapis text-gold">
-                        <tr><th scope="col" class="p-3">المصدر</th><th scope="col" class="p-3">الموضع</th><th scope="col" class="p-3">ما يفيده</th></tr>
+        <!-- قسم الأمثال التي انفرد بها متى (10 أمثال كبرى) -->
+        <section id="parables" class="py-20 border-t border-gray-900">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold mb-4">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>أمثال ملكوت السماوات الحصرية لمتى</span>
+                </div>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-3 tracking-wide">أمثال لاهوتية انفرد بها إنجيل متى فقط</h2>
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">عشرة أمثال تعليمية كبرى لم ترد في أي إنجيل آخر، رسمت معالم ملكوت السماوات</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 01</span>
+                    <h4 class="text-white font-bold text-sm mb-1">مثل الزوان في الحقل</h4>
+                    <p class="text-gray-400 text-xs">«دَعُوهُمَا يَنْمِيَانِ كِلاَهُمَا مَعًا إِلَى الْحَصَادِ» (متى 13: 24-30)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 02</span>
+                    <h4 class="text-white font-bold text-sm mb-1">مثل الكنز المخفي</h4>
+                    <p class="text-gray-400 text-xs">«يَمْضِي وَيَبِيعُ كُلَّ مَا كَانَ لَهُ وَيَشْتَرِي ذلِكَ الْحَقْلَ» (متى 13: 44)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 03</span>
+                    <h4 class="text-white font-bold text-sm mb-1">اللؤلؤة كثيرة الثمن</h4>
+                    <p class="text-gray-400 text-xs">تاجر وجد لؤلؤة واحدة فباع كل ما له لشرائها (متى 13: 45-46)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 04</span>
+                    <h4 class="text-white font-bold text-sm mb-1">مثل الشبكة الجامعة</h4>
+                    <p class="text-gray-400 text-xs">شبكة جُمِع فيها من كل صنف وفُرز الصالح من الرديء (متى 13: 47-50)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 05</span>
+                    <h4 class="text-white font-bold text-sm mb-1">العبد عديم الرحمة</h4>
+                    <p class="text-gray-400 text-xs">أُعفي من 10 آلاف وزنة ولم يسامح رفيقه بـ 100 دينار (متى 18: 23-35)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 06</span>
+                    <h4 class="text-white font-bold text-sm mb-1">عمال الساعة الـ 11</h4>
+                    <p class="text-gray-400 text-xs">«أَمْ عَيْنُكَ شِرِّيرَةٌ لأَنِّي أَنَا صَالِحٌ؟» (متى 20: 1-16)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 07</span>
+                    <h4 class="text-white font-bold text-sm mb-1">مثل الابنين</h4>
+                    <p class="text-gray-400 text-xs">أحدهما قال «لا أريد» وندم فمضى، والآخر قال «نعم» ولم يمضِ (متى 21: 28-32)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 08</span>
+                    <h4 class="text-white font-bold text-sm mb-1">عرس ابن الملك</h4>
+                    <p class="text-gray-400 text-xs">دعوة الضيوف والإنسان الذي بلا لباس العرس (متى 22: 1-14)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 09</span>
+                    <h4 class="text-white font-bold text-sm mb-1">العشر عذارى</h4>
+                    <p class="text-gray-400 text-xs">خمس حكيمات وخمس جاهلات في انتظار العريس (متى 25: 1-13)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gray-950/70 border border-gray-800">
+                    <span class="text-[11px] font-mono text-teal-400 block mb-1">مثل 10</span>
+                    <h4 class="text-white font-bold text-sm mb-1">الخراف والجداء</h4>
+                    <p class="text-gray-400 text-xs">دينونة الأمم وفرز الأبرار عن الأشرار في مجد الملك (متى 25: 31-46)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم ملخص إنجيل متى ونقاطه الأساسية باختصار ووضوح -->
+        <section id="gospel-summary" class="py-16 border-t border-gray-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-3">ملخص إنجيل متى ونقاطه الأساسية باختصار ووضوح</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto">خريطة طريق شاملة تقسم الأصحاحات الـ 28 بأسلوب موضوعي يسهل استيعابه وسرده</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="p-6 md:p-8 rounded-2xl bg-gray-900/50 border border-gray-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">الأصحاحات 1 - 4</span>
+                        <h3 class="text-lg font-bold text-white">النسب، الميلاد، المعمودية، والتجربة على الجبل</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        تأصيل نسب يسوع كابن داود وابن إبراهيم لتحقيق الوعود الملوكية، ولادته العذرية، هروب العائلة لمصر، معموديته في نهر الأردن على يد يوحنا المعمدان، ثم انتصاره على إبليس في تجربة البرية وبدء دعوة تلاميذه الأوائل.
+                    </p>
+                </div>
+
+                <div class="p-6 md:p-8 rounded-2xl bg-gray-900/50 border border-gray-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">الأصحاحات 5 - 7 (الخطبة الأولى)</span>
+                        <h3 class="text-lg font-bold text-white">دستور الملكوت - الموعظة على الجبل</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        أعظم خطبة تعليمية في التاريخ البشري؛ افتتحها بالتطويبات، وأعلن أن تلاميذه هم ملح الأرض ونور العالم، وعمّق وصايا الناموس القديم من الحرف الظاهري إلى نقاوة القلب والفكر (الغضب، الشهوة، القسم، محبة الأعداء، والصلاة الربانية).
+                    </p>
+                </div>
+
+                <div class="p-6 md:p-8 rounded-2xl bg-gray-900/50 border border-gray-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">الأصحاحات 8 - 12 (الخطبة الثانية)</span>
+                        <h3 class="text-lg font-bold text-white">سلطان الملك وإرسالية الخدمة والتلمذة</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        استعراض مكثف لعشر معجزات باهرة لإثبات سلطان المسيح، دعوة متى العشار ووليمته، ثم إرسال التلاميذ الاثني عشر في الأصحاح 10 وتفويضهم بالسلطان مع تحذيرهم من الاضطهادات القادمة ودعوتهم لحمل الصليب.
+                    </p>
+                </div>
+
+                <div class="p-6 md:p-8 rounded-2xl bg-gray-900/50 border border-gray-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20">الأصحاحات 13 - 17 (الخطبة الثالثة)</span>
+                        <h3 class="text-lg font-bold text-white">أمثال ملكوت السماوات وإعلان الهوية</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        سلسلة أمثال الملكوت السبعة (الزارع، الزوان، حبة الخردل، الخميرة، الكنز، اللؤلؤة، والشبكة)، اعتراف بطرس التاريخي «أَنْتَ هُوَ الْمَسِيحُ ابْنُ اللهِ الْحَيِّ» وإعلان بناء الكنيسة (متى 16: 18)، ثم حادثة التجلي المجيدة على الجبل.
+                    </p>
+                </div>
+
+                <div class="p-6 md:p-8 rounded-2xl bg-gray-900/50 border border-gray-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/10 text-pink-400 border border-pink-500/20">الأصحاحات 18 - 25 (الخطبتان الرابعة والخامسة)</span>
+                        <h3 class="text-lg font-bold text-white">نظام الكنيسة، الويلات، ونبوات أواخر الدهور</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        دستور العلاقات الكنسية والمغفرة غير المشروطة (متى 18)، الدخول الانتصاري إلى أورشليم، الويلات السبع للكتبة والفريسيين المرائين (أصحاح 23)، ونبوات خراب الهيكل والمجيء الثاني ويوم الدينونة وأمثال العذارى والوزنات (أصحاح 24-25).
+                    </p>
+                </div>
+
+                <div class="p-6 md:p-8 rounded-2xl bg-gray-900/50 border border-gray-800 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">الأصحاحات 26 - 28</span>
+                        <h3 class="text-lg font-bold text-white">الفصح، الآلام، الصلب، القيامة، والإرسالية الكبرى</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        تأسيس سر الإفخارستيا في العشاء الأخير، صلاة جثسيماني، المحاكمة أمام قيافا وبيلاطس، الصلب والظواهر الكونية العظيمة، القبر الفارغ وظهور القيامة المجيدة، والختام الخالد بـ «الإرسالية الكبرى» لتلمذة جميع الأمم (متى 28: 19-20).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم جدول المصادر والمعايرة التوثيقية القديم كاملاً -->
+        <section id="sources" class="py-16 border-t border-gray-900">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-black text-white mb-3">جدول معايرة وتصنيف مصادر السيرة</h2>
+                <p class="text-gray-400 text-xs md:text-sm">أداة مرجعية لتحديد طبيعة التوثيق التاريخي لكل محطة</p>
+            </div>
+
+            <div class="w-full overflow-x-auto rounded-2xl border border-gray-800/80 bg-gray-950/40 backdrop-blur-md">
+                <table class="w-full text-right border-collapse min-w-[650px]">
+                    <thead>
+                        <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-200 text-sm font-semibold">
+                            <th class="p-5">العنصر / المحطة التاريخية</th>
+                            <th class="p-5">المصدر الأساسي</th>
+                            <th class="p-5">طبيعة التوثيق العلمي والكنسي</th>
+                        </tr>
                     </thead>
-                    <tbody id="sources-body" class="divide-y divide-vellum/10"></tbody>
+                    <tbody class="text-sm divide-y divide-gray-900 text-gray-400">
+                        <tr class="hover:bg-gray-900/30 transition-colors">
+                            <td class="p-5 font-medium text-white">العمل كعشّار في كفرناحوم والاستجابة الفورية للدعوة والوليمة</td>
+                            <td class="p-5">الأناجيل الإزائية (متى، مرقس، لوقا)</td>
+                            <td class="p-5"><span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">نص كتابي ثابت ومعتمد</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-900/30 transition-colors">
+                            <td class="p-5 font-medium text-white">الهوية المزدوجة باسم "لاوي بن حلفى" وربطها بمتى</td>
+                            <td class="p-5">إنجيل مرقس والتقليد المتطابق</td>
+                            <td class="p-5"><span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">مزيج بين النص والتقليد المستقر</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-900/30 transition-colors">
+                            <td class="p-5 font-medium text-white">نسبة الإنجيل الأول إليه وكتابته بالآرامية لليهود دون نصوص أخرى</td>
+                            <td class="p-5">شهادات آباء الكنيسة (بابياس، إيريناوس)</td>
+                            <td class="p-5"><span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">تقليد كنسي تاريخي قديم</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-900/30 transition-colors">
+                            <td class="p-5 font-medium text-white">تفاصيل التبشير في بلاد الشرق (فارس، أثيوبيا الشرقية)</td>
+                            <td class="p-5">تقاليد وروايات كنسية متنوعة ومتأخرة</td>
+                            <td class="p-5"><span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">تقاليد جغرافية وتاريخية متباينة</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-900/30 transition-colors">
+                            <td class="p-5 font-medium text-white">تفاصيل الاستشهاد، طرائقه المتعددة، وزمن الوفاة (68 م)</td>
+                            <td class="p-5">كتب السير والشهداء (مثل Foxe’s Book)</td>
+                            <td class="p-5"><span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-pink-500/10 text-pink-400 border border-pink-500/20">روايات تقليدية متأخرة وتطور ليترجي</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
+
+        <!-- قسم المراجع الأكاديمية والآبائية -->
+        <section class="py-12 border-t border-gray-900 text-xs text-gray-500">
+            <div class="max-w-4xl mx-auto bg-gray-950/80 p-6 rounded-xl border border-gray-900 shadow-2xl">
+                <h4 class="text-sm font-bold text-gray-400 mb-3 flex items-center gap-2">
+                    <i data-lucide="library" class="w-4 h-4"></i>
+                    <span>المراجع التاريخية والأكاديمية المعتمدة لتوثيق السيرة والإنجيل:</span>
+                </h4>
+                <ul class="list-decimal list-inside space-y-2 text-justify">
+                    <li>شهادات بابياس الجيرابوليسي (نحو 110 م) المحفوظة في تاريخ الكنيسة ليوسابيوس القيصري.</li>
+                    <li>كتاب "ضد الهرطقات" للقديس إيريناوس أسقف ليون (نحو 180 م) - الفصل الثالث حول الأناجيل.</li>
+                    <li>كتاب "مشاهير الرجال" (De Viris Illustribus) للقديس جيروم (هيرونيموس) - الفصل الثالث المخصص لمتى.</li>
+                    <li>المخطوطات الأثرية القديمة للعهد الجديد وقوائم قانونية الأسفار التاريخية (القائمة الموراتورية).</li>
+                    <li>الدراسات النقدية الحديثة لأطلس الطرق الرومانية القديمة وشبكة السير الجمركية الجليلية وحركة الفيالق تجارياً (*Via Maris*).</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="border-t border-vellum/10 py-8 text-center text-sm text-vellum/60">
-        <a href="../../" class="text-gold">العودة إلى Orthodox Codex</a>
+    <!-- الفوتر -->
+    <footer class="border-t border-gray-900 bg-gray-950/60 py-10 mt-16 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p>© 2026 السيرة التاريخية للقديس متى العشّار وإنجيله البنيوي. توثيق تاريخي مفتوح للدراسة والتصفح الفوري.</p>
+        </div>
     </footer>
 
+    <!-- سكربت جافا سكريبت للنطق التلقائي والأيقونات -->
     <script>
-        'use strict';
-        /* كل البيانات في مكان واحد: التعديل لا يتطلب لمس الـ HTML */
-        const DATA = {
-            names: [
-                { label: 'العبرية',        text: 'מַתִּתְיָהוּ',  shown: 'מַתִּתְיָהוּ (Mattityahu)', lang: 'he-IL' },
-                { label: 'الآرامية',       text: 'מַתַּי',        shown: 'מַתַּי (Mattai)',          lang: 'he-IL' },
-                { label: 'السريانية',      text: 'Mattai',       shown: 'ܡܰܬܰܝ (Mattai)',            lang: 'en-US' },
-                { label: 'القبطية',        text: 'Matthaios',    shown: 'Ⲙⲁⲧⲑⲉⲟⲥ (Matthaios)',       lang: 'el-GR' },
-                { label: 'اليونانية القديمة', text: 'Ματθαῖος',   shown: 'Ματθαῖος (Matthaios)',      lang: 'el-GR' },
-                { label: 'الإنجليزية',     text: 'Matthew',      shown: 'Matthew',                   lang: 'en-US' }
-            ],
-            miracles: [
-                'شفاء الأبرص (8: 1–4)', 'شفاء غلام قائد المئة (8: 5–13)', 'شفاء حماة بطرس (8: 14–15)',
-                'تهدئة العاصفة (8: 23–27)', 'إخراج الشياطين في كورة الجرجسيين (8: 28–34)', 'شفاء المفلوج (9: 1–8)',
-                'إقامة ابنة رئيس المجمع (9: 18–26)', 'شفاء نازفة الدم (9: 20–22)', 'شفاء أعميين (9: 27–31)',
-                'شفاء الأخرس المجنون (9: 32–33)', 'شفاء صاحب اليد اليابسة (12: 9–14)', 'شفاء المجنون الأعمى الأخرس (12: 22)',
-                'إشباع الخمسة آلاف (14: 13–21)', 'المشي على الماء (14: 22–33)', 'شفاء ابنة المرأة الكنعانية (15: 21–28)',
-                'إشباع الأربعة آلاف (15: 32–39)', 'شفاء الولد المصروع (17: 14–21)', 'الدرهم في فم السمكة (17: 24–27)',
-                'شفاء أعميين عند أريحا (20: 29–34)', 'يبس شجرة التين (21: 18–22)'
-            ],
-            parables: [
-                'الزوان بين الحنطة (13: 24–30)', 'الكنز المخفي في الحقل (13: 44)', 'اللؤلؤة الكثيرة الثمن (13: 45–46)',
-                'شبكة الصيد (13: 47–50)', 'العبد الذي لا يغفر (18: 23–35)', 'الفعلة في الكرم (20: 1–16)',
-                'الابنان المأموران بالعمل (21: 28–32)', 'عرس ابن الملك (22: 1–14)', 'العذارى العشر (25: 1–13)',
-                'الوزنات (25: 14–30)'
-            ],
-            unique: [
-                'سلسلة نسب المسيح من إبراهيم وداود (1: 1–17)', 'أحلام يوسف النجار (1: 20؛ 2: 13، 19)', 'زيارة المجوس (2: 1–12)',
-                'مذبحة أطفال بيت لحم والهروب إلى مصر (2: 13–18)', 'الموعظة على الجبل بكاملها تقريباً (5–7)',
-                'بطرس يمشي على الماء (14: 28–31)', 'وعد «على هذه الصخرة أبني كنيستي» (16: 17–19)', 'تدرج المصالحة داخل الكنيسة (18: 15–20)',
-                'حلم امرأة بيلاطس (27: 19)', 'نهاية يهوذا (27: 3–10)', 'حراس القبر وقيامة قديسين عند الصلب (27: 52–53، 62–66؛ 28: 11–15)'
-            ],
-            chapters: [
-                'النسب وميلاد المسيح من العذراء، اسم عمانوئيل.', 'المجوس، الهروب إلى مصر، مقتل أطفال بيت لحم، العودة إلى الناصرة.',
-                'يوحنا المعمدان ومعمودية المسيح.', 'التجربة على الجبل ودعوة أول التلاميذ وبدء الكرازة.',
-                'التطويبات والملح والنور، وتفسير الناموس.', 'الصدقة والصلاة والصوم، والصلاة الربانية، والاتكال على الله.',
-                'عدم الدينونة، «اسألوا تعطوا»، البابان الضيق والواسع، والبناء على الصخر.', 'شفاء الأبرص والقائد وحماة بطرس، وتهدئة العاصفة، وجرجسيّو الشياطين.',
-                'شفاء المفلوج، ودعوة متى، والصوم، وإقامة ابنة رئيس المجمع، ونازفة الدم.', 'اختيار الاثني عشر وإرساليتهم وتحذيرهم من الاضطهاد.',
-                'رسل المعمدان، وتوبيخ المدن غير التائبة، و«تعالوا إليّ يا جميع المتعبين».', 'السبت، اليد اليابسة، تجديف الفريسيين، وآية يونان.',
-                'أمثال الملكوت: الزارع، الزوان، الخردلة، الخميرة، الكنز، اللؤلؤة، الشبكة.', 'استشهاد يوحنا المعمدان، إشباع الخمسة آلاف، المشي على الماء.',
-                'تقليد الشيوخ، المرأة الكنعانية، إشباع الأربعة آلاف.', 'طلب آية، اعتراف بطرس، وعد الكنيسة، أول إعلان عن الآلام.',
-                'التجلّي، شفاء الولد المصروع، الدرهم في فم السمكة.', 'من هو الأعظم؟ الخروف الضال، المصالحة، العبد الذي لا يغفر.',
-                'الزواج والطلاق، البركة للأطفال، الشاب الغني.', 'الفعلة في الكرم، الإعلان الثالث عن الآلام، شفاء أعميين.',
-                'الدخول إلى أورشليم، تطهير الهيكل، شجرة التين، الابنان، الكرامون.', 'عرس ابن الملك، الجزية لقيصر، القيامة، أعظم وصية.',
-                'ويلات على الكتبة والفريسيين.', 'نبوّات عن خراب الهيكل ومجيء ابن الإنسان.',
-                'العذارى العشر، الوزنات، الدينونة الأخيرة (الخراف والجداء).', 'المؤامرة، العشاء الأخير، جثسيماني، القبض، محاكمة قيافا، إنكار بطرس.',
-                'محاكمة بيلاطس، نهاية يهوذا، الصلب، الموت، الدفن، حراسة القبر.', 'القيامة، الحراس والرشوة، والإرسالية العظمى: «اذهبوا وتلمذوا جميع الأمم».'
-            ],
-            sources: [
-                ['إنجيل متى', 'مت 9: 9؛ 10: 3', 'دعوة متى ولقب «العشّار» في قائمة الرسل'],
-                ['إنجيل مرقس', 'مر 2: 13–17', 'خبر الدعوة باسم «لاوي بن حلفى»'],
-                ['إنجيل لوقا', 'لو 5: 27–32', 'خبر الدعوة والوليمة باسم «لاوي»'],
-                ['إيريناوس، ضد الهرطقات', 'الكتاب 3: 1: 1', 'كتب متى إنجيله بين العبرانيين بلغتهم'],
-                ['بابياس (عند يوسابيوس)', 'تاريخ الكنيسة 3: 39', 'جمع متى «الأقوال» بلسان عبراني'],
-                ['أوريجانوس (عند يوسابيوس)', 'تاريخ الكنيسة 6: 25', 'متى الأول بين الأناجيل، كتبه للمؤمنين من اليهود'],
-                ['يوسابيوس القيصري', 'تاريخ الكنيسة 3: 24', 'كتابة الإنجيل وكرازة متى قبل رحيله'],
-                ['إكليمنضس السكندري', 'المربّي 2: 1', 'نمط حياة متى النسكي'],
-                ['القديس جيروم', 'مشاهير الرجال 3', 'عن الإنجيل العبراني وحياة متى']
-            ]
-        };
-
-        const $ = (id) => document.getElementById(id);
-
-        /* ملء القوائم النصية */
-        function fillList(id, items) {
-            $(id).innerHTML = items.map((t) => `<li>${t}</li>`).join('');
-        }
-        fillList('miracles-list', DATA.miracles);
-        fillList('parables-list', DATA.parables);
-        fillList('unique-list', DATA.unique);
-
-        $('chapters-list').innerHTML = DATA.chapters.map((t, i) => `
-            <details class="group rounded-xl border border-vellum/15 bg-lapis/60 px-4 py-3 open:border-gold/50">
-                <summary class="cursor-pointer font-semibold marker:text-gold">الأصحاح ${i + 1}</summary>
-                <p class="mt-2 text-vellum/80">${t}</p>
-            </details>`).join('');
-
-        $('sources-body').innerHTML = DATA.sources.map((r) =>
-            `<tr>${r.map((c) => `<td class="p-3 align-top">${c}</td>`).join('')}</tr>`).join('');
-
-        /* أزرار النطق */
-        $('voices').innerHTML = DATA.names.map((n, i) => `
-            <button type="button" data-i="${i}" class="flex flex-col items-center gap-1 rounded-xl border border-gold/30 bg-night px-3 py-3 transition hover:border-gold hover:bg-lapis">
-                <span class="flex items-center gap-1 text-sm text-gold"><i data-lucide="play" class="h-4 w-4" aria-hidden="true"></i>${n.label}</span>
-                <span class="text-base" dir="auto">${n.shown}</span>
-            </button>`).join('');
-
-        const synth = window.speechSynthesis;
-
-        /* اختيار أقرب صوت للغة المطلوبة (مطابق تماماً ثم نفس اللغة الأساسية) */
-        function pickVoice(lang) {
-            const all = synth.getVoices();
-            const base = lang.split('-')[0];
-            return all.find((v) => v.lang.replace('_', '-') === lang) ||
-                   all.find((v) => v.lang.toLowerCase().startsWith(base)) || null;
-        }
-
-        function speak(i) {
-            const n = DATA.names[i];
-            const status = $('voice-status');
-            if (!synth) { status.textContent = 'متصفحك لا يدعم النطق الصوتي.'; return; }
-            synth.cancel();
-            const u = new SpeechSynthesisUtterance(n.text);
-            const voice = pickVoice(n.lang);
-            u.lang = n.lang;
-            if (voice) u.voice = voice;
-            u.rate = 0.8;
-            status.textContent = voice
-                ? `${n.label}: ينطق بصوت «${voice.name}» (${voice.lang}) كأقرب تقريب.`
-                : `${n.label}: لا يوجد صوت مثبّت للغة ${n.lang} على جهازك، قد لا تسمع شيئاً.`;
-            synth.speak(u);
-        }
-
-        $('voices').addEventListener('click', (e) => {
-            const b = e.target.closest('button[data-i]');
-            if (b) speak(Number(b.dataset.i));
-        });
-        if (synth) synth.getVoices(); /* تحميل قائمة الأصوات مسبقاً (Chrome) */
-
         lucide.createIcons();
+
+        function initMobileSpeech() {
+            if ('speechSynthesis' in window) {
+                var initialActivation = new SpeechSynthesisUtterance('');
+                window.speechSynthesis.speak(initialActivation);
+                document.removeEventListener('touchstart', initMobileSpeech);
+                document.removeEventListener('click', initMobileSpeech);
+            }
+        }
+        document.addEventListener('touchstart', initMobileSpeech);
+        document.addEventListener('click', initMobileSpeech);
+
+        function mobileFriendlySpeak(originalText, langCode, phoneticFallback, customPitch, customRate) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                var utterance = new SpeechSynthesisUtterance();
+                var availableVoices = window.speechSynthesis.getVoices();
+                var isLanguageSupported = false;
+
+                for (var i = 0; i < availableVoices.length; i++) {
+                    if (availableVoices[i].lang.toLowerCase().indexOf(langCode.split('-')[0].toLowerCase()) !== -1) {
+                        isLanguageSupported = true;
+                        break;
+                    }
+                }
+
+                if (!isLanguageSupported) {
+                    utterance.text = phoneticFallback;
+                    utterance.lang = 'en-US'; 
+                } else {
+                    utterance.text = originalText;
+                    utterance.lang = langCode;
+                }
+
+                utterance.pitch = customPitch || 1.0;
+                utterance.rate = customRate || 0.75;
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("عذراً، هذا الجهاز أو المتصفح لا يدعم ميزة النطق التلقائي.");
+            }
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = function() {
+                window.speechSynthesis.getVoices();
+            };
+        }
     </script>
 </body>
 </html>
