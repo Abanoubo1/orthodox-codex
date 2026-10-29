@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Orthodox Codex | مدوّنة التراث الأرثوذكسي</title>
+    <meta name="description" content="مستودع مفتوح لتوثيق وعرض الدراسات والتراث الكنسي الأرثوذكسي عبر صفحات تفاعلية.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { cairo: ['Cairo', 'sans-serif'] },
+            colors: { night: '#0E1424', lapis: '#1A2A4A', gold: '#C8A24A', vellum: '#E9E2D0', oxblood: '#9B3040' }
+        } } };
+    </script>
+    <script src="https://unpkg.com/lucide@0.460.0"></script>
+    <style>
+        /* الخلفية: وهج ذهبي خافت خلف العنوان فقط، كأنه هالة أيقونة */
+        .halo { background: radial-gradient(60% 60% at 50% 0%, rgba(200,162,74,.18), transparent 70%); }
+        :focus-visible { outline: 2px solid #C8A24A; outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    </style>
+</head>
+<body class="font-cairo bg-night text-vellum min-h-screen antialiased">
+    <header class="halo text-center px-6 pt-16 pb-12">
+        <i data-lucide="cross" class="mx-auto mb-4 h-10 w-10 text-gold" aria-hidden="true"></i>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-gold">Orthodox Codex</h1>
+        <p class="mt-4 max-w-xl mx-auto text-lg leading-loose text-vellum/80">
+            مدوّنة مفتوحة تعرض التراث الكنسي الأرثوذكسي بمصادره، في صفحات تفاعلية.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 pb-20">
+        <h2 class="text-2xl font-extrabold mb-6">متاح الآن</h2>
+        <section class="mb-14">
+            <a href="topics/gospel-of-matthew/" class="group block rounded-2xl border border-gold/40 bg-lapis p-6 sm:p-8 transition hover:border-gold hover:-translate-y-1">
+                <div class="flex items-start gap-4">
+                    <i data-lucide="book-open" class="h-8 w-8 shrink-0 text-gold" aria-hidden="true"></i>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-extrabold">القديس متى العشّار وإنجيله</h3>
+                        <p class="mt-2 leading-loose text-vellum/80">سيرته، لقب العشّار، أسلوب التدوين، المعجزات والأمثال والانفرادات، وملخص الأصحاحات الـ 28، مع نطق اسمه بست لغات.</p>
+                        <span class="mt-4 inline-flex items-center gap-2 text-gold font-semibold">افتح الصفحة <i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <h2 class="text-2xl font-extrabold mb-6">قيد التطوير</h2>
+        <section class="grid gap-4 sm:grid-cols-2" aria-label="موضوعات قيد التطوير">
+            <article class="rounded-2xl border border-vellum/15 bg-lapis/50 p-6 opacity-80">
+                <i data-lucide="columns-3" class="h-7 w-7 text-gold mb-3" aria-hidden="true"></i>
+                <h3 class="text-lg font-extrabold">مقارنة النصوص الإزائية</h3>
+                <p class="mt-2 leading-loose text-vellum/75">عرض متوازٍ لمتى ومرقس ولوقا لإبراز المشترك والمنفرد في كل رواية.</p>
+                <span class="mt-4 inline-block rounded-full border border-oxblood bg-oxblood/30 px-3 py-1 text-sm">قريباً</span>
+            </article>
+            <article class="rounded-2xl border border-vellum/15 bg-lapis/50 p-6 opacity-80">
+                <i data-lucide="calendar-days" class="h-7 w-7 text-gold mb-3" aria-hidden="true"></i>
+                <h3 class="text-lg font-extrabold">خوارزميات التقويم القبطي والأبقطي</h3>
+                <p class="mt-2 leading-loose text-vellum/75">شرح برمجي لتحويل التواريخ وحساب الأبقطي لتحديد موعد عيد القيامة.</p>
+                <span class="mt-4 inline-block rounded-full border border-oxblood bg-oxblood/30 px-3 py-1 text-sm">قريباً</span>
+            </article>
+        </section>
+    </main>
+
+    <footer class="border-t border-vellum/10 py-8 text-center text-sm text-vellum/60">
+        مشروع مفتوح المصدر · المساهمات مرحّب بها عبر GitHub
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
